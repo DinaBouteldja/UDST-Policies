@@ -4,3 +4,5 @@ mistralai
 beautifulsoup4
 requests
 numpy
+python-dotenv
+sentence-transformers
