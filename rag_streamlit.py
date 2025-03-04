@@ -9,17 +9,17 @@ from dotenv import load_dotenv
 import time
 import re
 
-# Load environment variables
+# Load environment variables from .env (for local use)
 load_dotenv()
 
-# Retrieve API key
+# Check GitHub Secrets first, then fallback to .env
 api_key = os.getenv("MISTRAL_API_KEY")
 
-# Debugging: Check if the key is loaded
+# Debugging: Ensure API key is loaded
 if not api_key:
-    print("Error: API key not found! Make sure .env is set up correctly.")
+    print("Error: API key not found! Make sure to set it as a GitHub Secret or in .env")
 else:
-    print(f"API Key Loaded: {api_key[:5]}*****")  # Partially print key for security
+    print(f"API Key Loaded: {api_key[:5]}*****")   # Partially print key for security
 
 # Define the policies and their URLs
 policies = {
